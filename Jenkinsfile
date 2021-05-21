@@ -30,6 +30,7 @@ pipeline {
     post { 
         success { 
             println("Pipeline succeeded HOORAY!")
+            println("Branch name: ${BRANCH_NAME}")
         }
     }
 }
