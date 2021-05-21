@@ -1,5 +1,7 @@
 #!groovy
 
+def common
+
 pipeline {
     agent any
 
@@ -24,14 +26,14 @@ pipeline {
             steps {
                 println("Preparing...")
                 script {
-                    gv = load "common.groovy"
+                    common = load "common.groovy"
                 }
             }
         }
 
         stage("Build") { 
             steps {    
-                gv.build()
+                common.build()
             }
         }
 
@@ -43,14 +45,14 @@ pipeline {
             }
             steps {    
                 script { 
-                    gv.test()
+                    common.test()
                 }
             }
         }
 
         stage("Deploy") { 
             steps {    
-                gv.deploy()
+                common.deploy()
             }
         }
     }
