@@ -2,6 +2,9 @@
 
 pipeline {
     agent any
+    environment { 
+        NEW_VERSION = "1.2.0"
+    }
     stages { 
         stage("Prepare") { 
             steps {    
@@ -16,6 +19,11 @@ pipeline {
         }
 
         stage("Test") { 
+            when { 
+                expression { 
+                    BRANCH_NAME == "dev"
+                }
+            }
             steps {    
                 println("Testing...")
             }
@@ -24,6 +32,7 @@ pipeline {
         stage("Deploy") { 
             steps {    
                 println("Deploying...")
+                println("New version is: ${NEW_VERSION}")
             }
         }
     }
