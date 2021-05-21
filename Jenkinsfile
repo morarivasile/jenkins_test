@@ -32,8 +32,10 @@ pipeline {
         }
 
         stage("Build") { 
-            steps {    
-                common.build()
+            steps {  
+                script { 
+                    common.build()
+                }  
             }
         }
 
@@ -52,7 +54,9 @@ pipeline {
 
         stage("Deploy") { 
             steps {    
-                common.deploy()
+                script { 
+                    common.deploy()
+                }
             }
         }
     }
