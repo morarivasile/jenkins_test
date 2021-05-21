@@ -21,32 +21,36 @@ pipeline {
 
     stages { 
         stage("Prepare") { 
-            steps {    
+            steps {
                 println("Preparing...")
+                script {
+                    gv = load "common.groovy"
+                }
             }
         }
 
         stage("Build") { 
             steps {    
-                println("Building...")
+                gv.build()
             }
         }
 
         stage("Test") { 
             when { 
                 expression { 
-                    BRANCH_NAME == "dev" && params.executeTests
+                    params.executeTests
                 }
             }
             steps {    
-                println("Testing...")
+                script { 
+                    gv.test()
+                }
             }
         }
 
         stage("Deploy") { 
             steps {    
-                println("Deploying...")
-                println("Deploying version ${params.VERSION}")
+                gv.deploy()
             }
         }
     }
