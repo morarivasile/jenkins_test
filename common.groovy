@@ -8,6 +8,7 @@ def test() {
 
 def deploy() { 
     println("Deploying the application...")
+    println("Deploying version ${params.VERSION}")
 }
 
 return this
