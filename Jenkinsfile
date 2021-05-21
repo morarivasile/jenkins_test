@@ -1,27 +1,30 @@
 #!groovy
 
 pipeline {
-    stage("Prepare") { 
-        steps {    
-            println("Preparing...")
+    agent any
+    stages { 
+        stage("Prepare") { 
+            steps {    
+                println("Preparing...")
+            }
         }
-    }
 
-    stage("Build") { 
-        steps {    
-            println("Building...")
+        stage("Build") { 
+            steps {    
+                println("Building...")
+            }
         }
-    }
 
-    stage("Test") { 
-        steps {    
-            println("Testing...")
+        stage("Test") { 
+            steps {    
+                println("Testing...")
+            }
         }
-    }
 
-    stage("Deploy") { 
-        steps {    
-            println("Deploying...")
+        stage("Deploy") { 
+            steps {    
+                println("Deploying...")
+            }
         }
     }
 }
