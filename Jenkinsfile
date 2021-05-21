@@ -27,4 +27,9 @@ pipeline {
             }
         }
     }
+    post { 
+        success { 
+            println("Pipeline succeeded HOORAY!")
+        }
+    }
 }
