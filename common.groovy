@@ -1,3 +1,5 @@
+TEST_ENV_VARIABLE = "Some test environment variable..."
+
 def build() { 
     println("Building the application...")
 }

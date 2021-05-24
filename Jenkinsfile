@@ -11,7 +11,7 @@ pipeline {
 
     // Declare env variables here
     environment { 
-        NEW_VERSION = "1.2.0"
+        //
     }
 
     // Declare parameters here. Visually interactive in Jenkins UI
@@ -64,6 +64,7 @@ pipeline {
         success { 
             println("Pipeline succeeded HOORAY!")
             println("Branch name: ${BRANCH_NAME}")
+            println("Test env: ${env.TEST_ENV_VARIABLE}")
         }
     }
 }
