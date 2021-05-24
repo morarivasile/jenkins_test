@@ -1,6 +1,7 @@
 #!groovy
 
 def common
+load "common.groovy"
 
 pipeline {
     agent any
