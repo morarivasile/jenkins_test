@@ -10,11 +10,9 @@ pipeline {
     // }
 
     // Declare env variables here
-    environment { 
-        script { 
-            declareCommonEnvVariables()
-        } 
-    }
+    // environment { 
+        
+    // }
 
     // Declare parameters here. Visually interactive in Jenkins UI
     parameters { 
@@ -29,6 +27,7 @@ pipeline {
                 println("Preparing...")
                 script {
                     common = load "common.groovy"
+                    common.declareCommonEnvVariables()
                 }
             }
         }
