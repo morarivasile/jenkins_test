@@ -27,7 +27,7 @@ pipeline {
                 println("Preparing...")
                 script {
                     common = load "common.groovy"
-                    common.declareCommonEnvVariables()
+                    // common.declareCommonEnvVariables()
                 }
             }
         }
