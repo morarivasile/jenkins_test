@@ -11,7 +11,9 @@ pipeline {
 
     // Declare env variables here
     environment { 
-        declareCommonEnvVariables()
+        script { 
+            declareCommonEnvVariables()
+        } 
     }
 
     // Declare parameters here. Visually interactive in Jenkins UI
