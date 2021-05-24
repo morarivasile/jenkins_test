@@ -1,7 +1,6 @@
 #!groovy
 
-def common
-load "common.groovy"
+def common = load "common.groovy"
 
 pipeline {
     agent any
@@ -11,9 +10,9 @@ pipeline {
     // }
 
     // Declare env variables here
-    // environment { 
-        //
-    // }
+    environment { 
+        declareCommonEnvVariables()
+    }
 
     // Declare parameters here. Visually interactive in Jenkins UI
     parameters { 
