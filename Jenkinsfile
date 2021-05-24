@@ -10,9 +10,9 @@ pipeline {
     // }
 
     // Declare env variables here
-    environment { 
+    // environment { 
         //
-    }
+    // }
 
     // Declare parameters here. Visually interactive in Jenkins UI
     parameters { 
