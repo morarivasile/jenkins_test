@@ -5,18 +5,8 @@ def common
 pipeline {
     agent any
 
-    // agent {
-    //     label 'dev-merge'
-    // }
-
-    // Declare env variables here
-    // environment { 
-        
-    // }
-
     // Declare parameters here. Visually interactive in Jenkins UI
-    parameters { 
-        // string(name: "VERSION", defaultValue: "", description: "Version to deploy on prod")
+    parameters {
         choice(name: "VERSION", choices: ["1.1.0", "1.2.0", "1.3.0"], description: "")
         booleanParam(name: "executeTests", defaultValue: true, description: "")
     }
@@ -27,7 +17,6 @@ pipeline {
                 println("Preparing...")
                 script {
                     common = load "common.groovy"
-                    common.declareCommonEnvVariables()
                 }
             }
         }
@@ -65,7 +54,6 @@ pipeline {
         success { 
             println("Pipeline succeeded HOORAY!")
             println("Branch name: ${BRANCH_NAME}")
-            println("Test env: ${env.TEST_ENV_VARIABLE}")
         }
     }
 }
