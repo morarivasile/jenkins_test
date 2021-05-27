@@ -1,5 +1,7 @@
 #!groovy
 
+@Library('my-shared-library') _
+
 def common
 
 pipeline {
@@ -12,6 +14,11 @@ pipeline {
     }
 
     stages { 
+        stage("Wrlcome") { 
+            steps { 
+                welcomeJob 'VASYAAA'
+            }
+        }
         stage("Prepare") { 
             steps {
                 println("Preparing...")
