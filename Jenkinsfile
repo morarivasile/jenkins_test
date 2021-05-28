@@ -14,6 +14,11 @@ pipeline {
     }
 
     stages { 
+        stage("Testing separate job") { 
+            stept { 
+                testJob()
+            }
+        }
         stage("Test log from library") { 
             steps { 
                 // Methods from scripts must be declared in `script` directive
