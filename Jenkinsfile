@@ -17,13 +17,17 @@ pipeline {
         stage("Test log from library") { 
             steps { 
                 script { 
+                    // Methods from scripts must be declared in `script` directive
                     log.info 'Starting'
+                }
+                script { 
                     log.warning 'Nothing to do!'
                 }
             }
         }
         stage("Welcome") { 
-            steps { 
+            steps {
+                // Whole script can be called outside script directive
                 welcomeJob 'VASYAAA'
             }
         }
@@ -31,6 +35,7 @@ pipeline {
             steps {
                 println("Preparing...")
                 script {
+                    // Load local script from current directory and store reference to `common`
                     common = load "common.groovy"
                 }
             }
