@@ -14,7 +14,15 @@ pipeline {
     }
 
     stages { 
-        stage("Wrlcome") { 
+        stage("Test log from library") { 
+            steps { 
+                script { 
+                    log.info 'Starting'
+                    log.warning 'Nothing to do!'
+                }
+            }
+        }
+        stage("Welcome") { 
             steps { 
                 welcomeJob 'VASYAAA'
             }
