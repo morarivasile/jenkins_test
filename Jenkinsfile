@@ -15,7 +15,7 @@ pipeline {
 
     stages { 
         stage("Testing separate job") { 
-            stept { 
+            steps { 
                 testJob()
             }
         }
