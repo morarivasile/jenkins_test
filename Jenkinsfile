@@ -17,6 +17,9 @@ pipeline {
         stage("Testing separate job") { 
             steps { 
                 testJob()
+                script { 
+                    log.info "Нода: ${env.NODE_NAME}"
+                }
             }
         }
         stage("Test log from library") { 
