@@ -16,8 +16,8 @@ pipeline {
     stages { 
         stage("Test log from library") { 
             steps { 
+                // Methods from scripts must be declared in `script` directive
                 script { 
-                    // Methods from scripts must be declared in `script` directive
                     log.info 'Starting'
                 }
                 script { 
