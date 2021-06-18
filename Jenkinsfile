@@ -19,12 +19,12 @@ pipeline {
                 script {
                     // Load local script from current directory and store reference to `common`
                     common = load "common.groovy"
-
-                    library identifier: 'custom-lib@main', retriever: modernSCM(
-                        [$class: 'GitSCMSource',
-                        remote: 'git@github.com:morarivasile/jenkins_test_shared.git',
-                        credentialsId: 'github_id_1']
-                    )
+                    library identifier: 'custom-lib@main',retriever: modernSCM(
+                        github(traits: [
+                            gitHubBranchDiscovery(1),
+                            gitHubPullRequestDiscovery(1), 
+                            gitHubForkDiscovery(strategyId: 1, trust: gitHubTrustPermissions())
+                        ], repository: 'jenkins_test_shared', repoOwner: 'morarivasile'))
                 }
             }
         }
