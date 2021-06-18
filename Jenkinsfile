@@ -22,7 +22,8 @@ pipeline {
 
                     library identifier: 'custom-lib@main', retriever: modernSCM(
                         [$class: 'GitSCMSource',
-                        remote: 'git@github.com:morarivasile/jenkins_test_shared.git']
+                        remote: 'git@github.com:morarivasile/jenkins_test_shared.git',
+                        credentialsId: 'github_id_1']
                     )
                 }
             }
