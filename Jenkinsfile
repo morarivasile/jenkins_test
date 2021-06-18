@@ -20,7 +20,7 @@ pipeline {
                     // Load local script from current directory and store reference to `common`
                     common = load "common.groovy"
 
-                    library identifier: 'custom-lib@master', retriever: modernSCM(
+                    library identifier: 'custom-lib@main', retriever: modernSCM(
                         [$class: 'GitSCMSource',
                         remote: 'git@github.com:morarivasile/jenkins_test_shared.git']
                     )
