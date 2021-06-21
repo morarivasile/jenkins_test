@@ -6,3 +6,5 @@ def call(String version = 'main') {
         gitHubForkDiscovery(strategyId: 1, trust: gitHubTrustPermissions())
     ], repository: 'jenkins_test_shared', repoOwner: 'morarivasile'))   
 }
+
+return this;
