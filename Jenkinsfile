@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage("Load shared library") { 
             steps {
-                library 'my-shared-library@master'
+                library 'my-shared_lib@main'
             }
         }
         
