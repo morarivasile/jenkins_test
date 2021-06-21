@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage("Load shared library") { 
             steps {
-                loadSharedLibJob()
+                library 'my-shared-library@master'
             }
         }
         
