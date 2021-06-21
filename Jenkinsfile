@@ -15,7 +15,7 @@ pipeline {
         stage("Load shared library") { 
             steps {
 //                 library 'my-shared_lib@main'
-                loadSharedLibJob
+                loadSharedLibJob 'VASYAAA'
             }
         }
         
