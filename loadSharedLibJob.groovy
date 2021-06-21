@@ -1,5 +1,5 @@
-def call() { 
-    library identifier: 'custom-lib@main',retriever: modernSCM(
+def call(String version = 'main') { 
+    library identifier: "custom-lib@${version}",retriever: modernSCM(
         github(traits: [
         gitHubBranchDiscovery(1),
         gitHubPullRequestDiscovery(1), 
