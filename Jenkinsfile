@@ -12,13 +12,6 @@ pipeline {
     }
 
     stages {
-        stage("Load shared library") { 
-            steps {
-//                 library 'my-shared_lib@main'
-                loadSharedLibJob 'VASYAAA'
-            }
-        }
-        
         stage("Prepare") {
             steps {
                 println("Preparing...")
@@ -26,7 +19,7 @@ pipeline {
                 script {
                     // Load local script from current directory and store reference to `common`
                     common = load "common.groovy"
-//                     common.loadSharedLibrary()
+                    common.loadSharedLibrary()
                 }
             }
         }
