@@ -12,11 +12,12 @@ pipeline {
     }
 
     stages {
-//         stage("Load shared library") { 
-//             steps {
+        stage("Load shared library") { 
+            steps {
 //                 library 'my-shared_lib@main'
-//             }
-//         }
+                loadSharedLibJob
+            }
+        }
         
         stage("Prepare") {
             steps {
