@@ -3,9 +3,16 @@
 import org.notifications.*
 
 def common
+    
+def myLib = library identifier: 'custom-lib@main',retriever: modernSCM(
+        github(traits: [
+        gitHubBranchDiscovery(1),
+        gitHubPullRequestDiscovery(1), 
+        gitHubForkDiscovery(strategyId: 1, trust: gitHubTrustPermissions())
+    ], repository: 'jenkins_test_shared', repoOwner: 'morarivasile'))   
 
 def testHere() {
-    def notifier = new BitbucketNotifier(
+    def notifier = new myLib.org.notifications.BitbucketNotifier(
         "TestUsername",
         "TestPassword"
     )
