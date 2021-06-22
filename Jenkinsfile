@@ -52,9 +52,7 @@ pipeline {
                     log.warning 'Nothing to do!'
                 }
                 
-                script { 
-                    testHere()   
-                }
+                testHere()
             }
         }
 
