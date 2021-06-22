@@ -4,11 +4,11 @@ import org.notifications.*
 
 def common
 
-def notify() {
-    def notifier = BitbucketNotifier.new(
+def testHere() {
+    def notifier = new BitbucketNotifier(
         "TestUsername",
         "TestPassword"
-    );
+    )
 
     notifier.printCredentials()
 }
@@ -45,7 +45,9 @@ pipeline {
                     log.warning 'Nothing to do!'
                 }
                 
-                notify()
+                script { 
+                    testHere()   
+                }
             }
         }
 
