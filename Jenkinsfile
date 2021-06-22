@@ -1,6 +1,17 @@
 #!groovy
 
+import org.notifications.*
+
 def common
+
+def notify() {
+    def notifier = BitbucketNotifier.new(
+        "TestUsername",
+        "TestPassword"
+    );
+
+    notifier.printCredentials()
+}
 
 pipeline {
     agent any
@@ -33,6 +44,8 @@ pipeline {
                 script { 
                     log.warning 'Nothing to do!'
                 }
+                
+                notify()
             }
         }
 
