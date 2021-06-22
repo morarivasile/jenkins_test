@@ -12,7 +12,7 @@ def myLib = library identifier: 'custom-lib@main',retriever: modernSCM(
     ], repository: 'jenkins_test_shared', repoOwner: 'morarivasile'))   
 
 def testHere() {
-    def notifier = new myLib.org.notifications.BitbucketNotifier(
+    def notifier = myLib.org.notifications.BitbucketNotifier(
         "TestUsername",
         "TestPassword"
     )
