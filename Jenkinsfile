@@ -11,15 +11,6 @@ def myLib = library identifier: 'custom-lib@main',retriever: modernSCM(
         gitHubForkDiscovery(strategyId: 1, trust: gitHubTrustPermissions())
     ], repository: 'jenkins_test_shared', repoOwner: 'morarivasile'))   
 
-def testHere() {
-    def notifier = myLib.org.notifications.BitbucketNotifier(
-        "TestUsername",
-        "TestPassword"
-    )
-
-    notifier.printCredentials()
-}
-
 pipeline {
     agent any
 
@@ -51,8 +42,6 @@ pipeline {
                 script { 
                     log.warning 'Nothing to do!'
                 }
-                
-                testHere()
             }
         }
 
