@@ -42,6 +42,9 @@ pipeline {
                 script { 
                     log.warning 'Nothing to do!'
                 }
+                script { 
+                    log.testFunctionHere("Vasile", true)   
+                }
             }
         }
 
