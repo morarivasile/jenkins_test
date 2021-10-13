@@ -1,6 +1,8 @@
 #!groovy
 def common
 
+@Library('sharedLib') _
+
 pipeline {
     agent any
 
@@ -18,7 +20,6 @@ pipeline {
                 script {
                     // Load local script from current directory and store reference to `common`
                     common = load "common.groovy"
-                    common.loadSharedLibrary()
                 }
             }
         }
