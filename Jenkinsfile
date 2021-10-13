@@ -1,7 +1,7 @@
 #!groovy
 def common
 
-@Library('sharedLib') _
+@Library('sharedLib@1.0.0') _
 
 pipeline {
     agent any
